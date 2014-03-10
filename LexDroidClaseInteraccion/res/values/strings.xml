@@ -4,5 +4,12 @@
     <string name="app_name">LexDroidClaseInteraccion</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="bienvenida">Bienvenido</string>
+    <string name="jorge">Jorge</string>
+	<string name="coloca_nombre">Coloca tu nombre</string>
+    <string name="enviar_nombre">Enviar nombre</string>
+    <string name="aviso_nombre_vacio">Por favor, introduce tu nombre</string>
+    <string name="saludo">Saluda</string>
+    <string name="hola_como_estas">¡Hola! ¿Cómo estás?</string>
+	
 </resources>
