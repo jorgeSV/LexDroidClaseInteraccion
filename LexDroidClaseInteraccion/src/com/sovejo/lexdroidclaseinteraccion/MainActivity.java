@@ -9,10 +9,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.Activity;
+import android.content.Intent;
 
 public class MainActivity extends Activity implements OnClickListener
 {
-	Button boton01, boton02;
+	Button boton01, boton02, boton03;
 	TextView textView;
 	EditText editText;
 	
@@ -26,19 +27,22 @@ public class MainActivity extends Activity implements OnClickListener
 		textView = (TextView) findViewById(R.id.textView02);
 		editText = (EditText) findViewById(R.id.editText01);
 		boton02 = (Button) findViewById(R.id.boton02);
+		boton03 = (Button) findViewById(R.id.boton03);
 		
 		boton01.setOnClickListener(this);
 		boton02.setOnClickListener(this);
+		boton03.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) 
 	{
 		// TODO Auto-generated method stub
+		String strEditText = editText.getText().toString();
+		
 		switch (v.getId()) 
-		{
+		{		
 			case R.id.boton01:
-				String strEditText = editText.getText().toString();
 				
 				if(strEditText.length() > 0)
 				{
@@ -46,8 +50,7 @@ public class MainActivity extends Activity implements OnClickListener
 				}
 				else
 				{
-					Toast toast01 = Toast.makeText(getApplicationContext(), R.string.aviso_nombre_vacio, Toast.LENGTH_LONG);
-					toast01.show();
+					this.lanzaAviso();
 				}
 				
 				break;
@@ -60,11 +63,31 @@ public class MainActivity extends Activity implements OnClickListener
 				
 				break;
 
+			case R.id.boton03:
+				
+				if(strEditText.length() > 0)
+				{
+					String strEnviar = editText.getText().toString();
+					Intent intent01 = new Intent("android.intent.action.SEGUNDAACTIVIDAD"); //Se copia del manifest
+					intent01.putExtra("strEnviar", strEnviar);
+					startActivity(intent01);
+				}
+				else
+				{
+					this.lanzaAviso();
+				}
+				
+				break;
+				
 			default:
 				break;
 		}
 	}
 
-	
+	public void lanzaAviso()
+	{
+		Toast toast01 = Toast.makeText(getApplicationContext(), R.string.aviso_nombre_vacio, Toast.LENGTH_LONG);
+		toast01.show();
+	}
 	
 }

@@ -11,5 +11,8 @@
     <string name="aviso_nombre_vacio">Por favor, introduce tu nombre</string>
     <string name="saludo">Saluda</string>
     <string name="hola_como_estas">¡Hola! ¿Cómo estás?</string>
+	<string name="nuevo_texto">Nuevo Texto</string>
+    <string name="segunda_actividad">Segunda Activity</string>
+    <string name="nueva_activity">Nueva Activity</string>
 	
 </resources>
